@@ -21,9 +21,28 @@ go mod download
 make build
 
 # Or build individually
-go build -o tle-forwarder main.go
-go build -o tle-forwarder-coap coap_server.go
+go build -o tle-forwarder src/main.go
+go build -o tle-forwarder-coap src/coap_server.go
 ```
+
+## Docker Usage
+
+```bash
+# Build Docker images
+make docker-build
+
+# Start both servers with Docker Compose
+make docker-up
+
+# Stop servers
+make docker-down
+
+# Or use docker-compose directly
+docker-compose up -d
+docker-compose down
+```
+
+The HTTP server will be available at `http://localhost:8000` and CoAP at `coap://localhost:5683`.
 
 ## Usage
 

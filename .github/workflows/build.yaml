@@ -23,13 +23,13 @@ jobs:
       run: go mod download
     
     - name: Build HTTP server
-      run: go build -o tle-forwarder main.go
+      run: go build -o tle-forwarder src/main.go
     
     - name: Build CoAP server
-      run: go build -o tle-forwarder-coap coap_server.go
+      run: go build -o tle-forwarder-coap src/coap_server.go
     
     - name: Build test client
-      run: go build -o test-coap test_coap_client.go
+      run: go build -o test-coap src/test_coap_client.go
     
     - name: Upload HTTP server artifact
       uses: actions/upload-artifact@v4
